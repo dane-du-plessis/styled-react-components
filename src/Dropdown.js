@@ -1,11 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "@emotion/styled";
 
-function Dropdown() {
+function Dropdown(props) {
   const node = useRef();
-  const [select = false, setSelect] = useState("All");
   const [expanded = false, setExpanded] = useState(false);
-  const options = ["One", "Two", "Three"];
 
   useEffect(() => {
     // add when mounted
@@ -30,9 +28,9 @@ function Dropdown() {
     setExpanded(false);
   };
 
-  const handleSelect = (index) => {
+  const handleSelect = (option) => {
     console.log("select!");
-    setSelect(options[index]);
+    props.onSelect(option);
     setExpanded(false);
   };
 
@@ -44,13 +42,13 @@ function Dropdown() {
   return (
     <Container ref={node} onClick={() => {}}>
       <Selected onClick={expandOptions}>
-        <p>{select}</p>
+        <p>{props.selected}</p>
       </Selected>
 
       <OptionsMenu>
         {expanded
-          ? options.map((op, index) => (
-              <Options onClick={(e) => handleSelect(index)}>
+          ? props.options.map((op) => (
+              <Options onClick={(e) => handleSelect(op)}>
                 <p>{op}</p>
               </Options>
             ))
