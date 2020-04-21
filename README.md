@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Inspiration drawn from the following
+
+https://medium.com/@pitipatdop/little-neat-trick-to-capture-click-outside-react-component-5604830beb7f
+https://medium.com/free-code-camp/how-to-autogenerate-forms-in-react-and-material-ui-with-mson-5771b1b7e739
+
+
 ## Available Scripts
 
 In the project directory, you can run:
